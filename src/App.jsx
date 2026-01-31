@@ -18,6 +18,9 @@ import ServiceAreaMap from './components/ServiceAreaMap'
 import PricingCalculator from './components/PricingCalculator'
 import DriverProfiles from './components/DriverProfiles'
 import FAQ from './components/FAQ'
+import TestimonialsCarousel from './components/TestimonialsCarousel'
+import LiveChat from './components/LiveChat'
+import PromoCode from './components/PromoCode'
 import './App.css'
 
 function App() {
@@ -47,17 +50,20 @@ function App() {
   return (
     <div className="app">
       <SocialFloatingButtons />
+      <LiveChat />
       <main id="main-content">
       <Header onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} activeSection={activeSection} />
       {activeSection === 'home' && (
         <>
           <Hero onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />
           <Services />
+          <PromoCode />
           <PricingCalculator />
           <DriverProfiles />
           <ServiceAreaMap />
           <WhaleWatchingVideo />
           <CompanyOverview />
+          <TestimonialsCarousel />
           <About />
           <Reviews />
           <FAQ />
