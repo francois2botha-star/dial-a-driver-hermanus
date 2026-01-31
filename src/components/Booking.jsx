@@ -41,46 +41,38 @@ function Booking() {
     
     const serviceName = activeTab === 'shuttle' ? 'Shuttle Service' : 'Chauffeur-Driven Service'
     
-    // Prepare form data for Web3Forms
-    const formPayload = new FormData()
-    formPayload.append('access_key', '96e56ef1-d4d8-442f-867f-df90212949d0')
-    formPayload.append('name', `${formData.name} ${formData.surname}`)
-    formPayload.append('email', formData.email)
-    formPayload.append('phone', formData.phone)
-    formPayload.append('subject', `New Booking: ${serviceName} from ${formData.name} ${formData.surname}`)
-    formPayload.append('from_name', 'Dial a Driver Website')
-    formPayload.append('replyto', formData.email)
-    
-    const bookingDetails = `
-=== BOOKING DETAILS ===
-
-Service Type: ${serviceName}
+    const bookingDetails = `Service: ${serviceName}
 Customer: ${formData.name} ${formData.surname}
 Email: ${formData.email}
 Phone: ${formData.phone}
 
-TRIP INFORMATION:
-Pickup Location: ${formData.pickupLocation}
-Dropoff Location: ${formData.dropoffLocation}
+Pickup: ${formData.pickupLocation}
+Dropoff: ${formData.dropoffLocation}
 Date: ${formData.date}
 Time: ${formData.time}
 Passengers: ${formData.passengers}
-Trip Type: ${formData.tripType}
-${formData.flightNumber ? `Flight Number: ${formData.flightNumber}` : ''}
-${activeTab === 'shuttle' ? `Preferred Vehicle: ${formData.vehicleType}` : ''}
+Trip Type: ${formData.tripType}${formData.flightNumber ? `
+Flight: ${formData.flightNumber}` : ''}${activeTab === 'shuttle' ? `
+Vehicle: ${formData.vehicleType}` : ''}${formData.comments ? `
 
-${formData.comments ? `Additional Comments:\n${formData.comments}` : ''}
-
----
-Reply directly to this email to contact the customer.
-    `.trim()
-    
-    formPayload.append('message', bookingDetails)
+Comments: ${formData.comments}` : ''}`
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formPayload
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '96e56ef1-d4d8-442f-867f-df90212949d0',
+          name: `${formData.name} ${formData.surname}`,
+          email: formData.email,
+          phone: formData.phone,
+          message: bookingDetails,
+          subject: `Booking: ${serviceName} - ${formData.name}`,
+          from_name: 'Dial a Driver Website',
+          replyto: formData.email
+        })
       })
 
       const result = await response.json()

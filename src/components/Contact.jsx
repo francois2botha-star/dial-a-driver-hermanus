@@ -21,21 +21,22 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    // Prepare form data for Web3Forms
-    const formPayload = new FormData()
-    formPayload.append('access_key', '96e56ef1-d4d8-442f-867f-df90212949d0')
-    formPayload.append('name', formData.name)
-    formPayload.append('email', formData.email)
-    formPayload.append('phone', formData.phone)
-    formPayload.append('message', formData.message)
-    formPayload.append('subject', `Contact Form Inquiry from ${formData.name}`)
-    formPayload.append('from_name', 'Dial a Driver Website')
-    formPayload.append('replyto', formData.email)
-
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formPayload
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '96e56ef1-d4d8-442f-867f-df90212949d0',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          subject: `Contact Form: ${formData.name}`,
+          from_name: 'Dial a Driver Website',
+          replyto: formData.email
+        })
       })
 
       const result = await response.json()
