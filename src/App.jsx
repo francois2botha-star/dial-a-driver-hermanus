@@ -27,10 +27,8 @@ function App() {
   const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
-    // Initialize from hash if present
     const hash = window.location.hash.replace('#', '')
     if (hash) setActiveSection(hash)
-    // respond to back/forward
     const onHash = () => {
       const h = window.location.hash.replace('#', '')
       if (h) setActiveSection(h)
@@ -40,7 +38,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    // Log a page view for analytics on section change (SPA)
     try {
       const path = '/' + (activeSection || 'home')
       logPageView(path)
