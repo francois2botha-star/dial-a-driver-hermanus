@@ -13,6 +13,11 @@ import VehiclesGallery from './components/VehiclesGallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import SocialFloatingButtons from './components/SocialFloatingButtons'
+import BookingConfirmation from './components/BookingConfirmation'
+import ServiceAreaMap from './components/ServiceAreaMap'
+import PricingCalculator from './components/PricingCalculator'
+import DriverProfiles from './components/DriverProfiles'
+import FAQ from './components/FAQ'
 import './App.css'
 
 function App() {
@@ -48,10 +53,14 @@ function App() {
         <>
           <Hero onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />
           <Services />
+          <PricingCalculator />
+          <DriverProfiles />
+          <ServiceAreaMap />
           <WhaleWatchingVideo />
           <CompanyOverview />
           <About />
           <Reviews />
+          <FAQ />
         </>
       )}
       {activeSection === 'activities' && <Activities onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />}
