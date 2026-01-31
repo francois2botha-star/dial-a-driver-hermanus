@@ -20,8 +20,27 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Contact form submitted:', formData)
-    alert('Thank you! We will get back to you soon.')
+    
+    // Compose mailto with user's email in subject for easy reply
+    const to = 'francois2botha@gmail.com'
+    const subject = encodeURIComponent(`Contact Form - Reply to: ${formData.email}`)
+    
+    let bodyText = `CUSTOMER EMAIL: ${formData.email}\n`
+    bodyText += `CUSTOMER PHONE: ${formData.phone}\n`
+    bodyText += `(Reply to this email will go to: ${formData.email})\n\n`
+    bodyText += `--- MESSAGE ---\n\n`
+    bodyText += `Name: ${formData.name}\n`
+    bodyText += `Email: ${formData.email}\n`
+    bodyText += `Phone: ${formData.phone}\n\n`
+    bodyText += `Message:\n${formData.message}`
+    
+    const body = encodeURIComponent(bodyText)
+    const mailto = `mailto:${to}?subject=${subject}&body=${body}`
+    
+    window.location.href = mailto
+    
+    alert('Your email client will open to send the message. If it does not, please email francois2botha@gmail.com')
+    
     setFormData({
       name: '',
       email: '',

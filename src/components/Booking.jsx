@@ -43,14 +43,17 @@ function Booking() {
     const serviceName = activeTab === 'shuttle' ? 'Shuttle Service' : 'Take Me Home Service'
     
     // Compose mailto to open user's email client with booking details
-    const to = 'info@dialadriverhermanus.co.za'
-    const subject = encodeURIComponent(`New booking request: ${serviceName}`)
+    const to = 'francois2botha@gmail.com'
+    const subject = encodeURIComponent(`Booking: ${serviceName} - Reply to: ${formData.email}`)
     
-    let bodyText = `Service Type: ${serviceName}\n`
-    bodyText += `Name: ${formData.name}\n`
-    bodyText += `Surname: ${formData.surname}\n`
-    bodyText += `Phone: ${formData.phone}\n`
+    let bodyText = `CUSTOMER EMAIL: ${formData.email}\n`
+    bodyText += `CUSTOMER PHONE: ${formData.phone}\n`
+    bodyText += `(Reply to this email will go to: ${formData.email})\n\n`
+    bodyText += `--- BOOKING DETAILS ---\n\n`
+    bodyText += `Service Type: ${serviceName}\n`
+    bodyText += `Name: ${formData.name} ${formData.surname}\n`
     bodyText += `Email: ${formData.email}\n`
+    bodyText += `Phone: ${formData.phone}\n`
     bodyText += `Pickup: ${formData.pickupLocation}\n`
     bodyText += `Dropoff: ${formData.dropoffLocation}\n`
     bodyText += `Date: ${formData.date}\n`
@@ -75,7 +78,7 @@ function Booking() {
     
     window.location.href = mailto
     
-    alert('Your email client will open to send the booking. If it does not, please email info@dialadriverhermanus.co.za')
+    alert('Your email client will open to send the booking. If it does not, please email francois2botha@gmail.com')
     
     setFormData({
       pickupLocation: '',
