@@ -18,35 +18,57 @@ function Contact() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
-    // Compose mailto with user's email in subject for easy reply
-    const to = 'francois2botha@gmail.com'
-    const subject = encodeURIComponent(`Contact Form - Reply to: ${formData.email}`)
-    
-    let bodyText = `CUSTOMER EMAIL: ${formData.email}\n`
-    bodyText += `CUSTOMER PHONE: ${formData.phone}\n`
-    bodyText += `(Reply to this email will go to: ${formData.email})\n\n`
-    bodyText += `--- MESSAGE ---\n\n`
-    bodyText += `Name: ${formData.name}\n`
-    bodyText += `Email: ${formData.email}\n`
-    bodyText += `Phone: ${formData.phone}\n\n`
-    bodyText += `Message:\n${formData.message}`
-    
-    const body = encodeURIComponent(bodyText)
-    const mailto = `mailto:${to}?subject=${subject}&body=${body}`
-    
-    window.location.href = mailto
-    
-    alert('Your email client will open to send the message. If it does not, please email francois2botha@gmail.com')
-    
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    })
+    // Prepare email data for Web3Forms
+    const emailData = {
+      access_key: "96e56ef1-d4d8-442f-867f-df90212949d0",
+      subject: `Contact Form Inquiry from ${formData.name}`,
+      from_name: formData.name,
+      email: formData.email,
+      to_email: "francois2botha@gmail.com",
+      message: `
+=== CONTACT FORM INQUIRY ===
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+
+---
+Reply directly to this email to contact the customer.
+      `.trim()
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailData)
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        alert('✓ Message sent successfully! We will get back to you soon.')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        })
+      } else {
+        alert('Failed to send message. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+      }
+    } catch (error) {
+      alert('Failed to send message. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+      console.error('Contact form error:', error)
+    }
   }
 
   return (

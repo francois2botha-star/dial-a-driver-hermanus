@@ -43,7 +43,7 @@ function Booking() {
     
     // Prepare email data for Web3Forms
     const emailData = {
-      access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Get free key from https://web3forms.com
+      access_key: "96e56ef1-d4d8-442f-867f-df90212949d0", // Get free key from https://web3forms.com
       subject: `New Booking: ${serviceName} from ${formData.name}`,
       from_name: `${formData.name} ${formData.surname}`,
       email: formData.email,
