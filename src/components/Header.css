@@ -5,7 +5,7 @@
   box-shadow: 0 6px 30px rgba(0,0,0,0.18);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
   backdrop-filter: blur(6px);
 }
 
@@ -138,9 +138,14 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 0;
+  }
+
   .header-container {
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    padding: 0 16px;
   }
 
   .logo {
@@ -148,14 +153,40 @@
     justify-content: center;
   }
 
+  .logo-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .location {
+    font-size: 0.7rem;
+  }
+
   .nav {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 6px;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 
   .contact-info {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .phone-number {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
 }

@@ -1,5 +1,5 @@
 .about {
-  padding: 100px 20px;
+  padding: 60px 20px;
   background: white;
 }
 
@@ -70,21 +70,32 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 60px 20px;
+    padding: 40px 16px;
   }
 
   .about-content {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 24px;
   }
 
   .about-text h2 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .features li {
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
 
   .image-placeholder {
-    width: 250px;
-    height: 250px;
-    font-size: 4rem;
+    width: 200px;
+    height: 200px;
+    font-size: 3.5rem;
   }
 }

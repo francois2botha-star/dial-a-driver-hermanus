@@ -1,11 +1,12 @@
 .services {
-  padding: 100px 20px;
+  padding: 60px 20px;
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .services h2 {
@@ -19,8 +20,8 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
 .service-card {
@@ -68,14 +69,38 @@
 
 @media (max-width: 768px) {
   .services {
-    padding: 60px 20px;
+    padding: 40px 16px;
+  }
+
+  .container {
+    padding: 0 16px;
   }
 
   .services h2 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    margin-bottom: 32px;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 24px;
+  }
+
+  .service-icon {
+    font-size: 2.8rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
   }
 }

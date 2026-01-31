@@ -3,6 +3,8 @@
   background: #000;
   margin: 0;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .carousel-wrapper {
@@ -207,33 +209,42 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .carousel-container {
+    margin-top: 0;
+  }
+
   .carousel-wrapper {
-    padding-bottom: 66.67%; /* 3:2 aspect ratio for mobile */
+    padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
   }
 
   .carousel-caption {
-    padding: 2rem 1.5rem;
-    gap: 0.8rem;
+    padding: 1.5rem 1rem;
+    gap: 0.6rem;
   }
 
   .carousel-caption h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.3;
   }
 
   .carousel-description {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .carousel-book-btn {
-    padding: 10px 24px;
-    font-size: 0.9rem;
+    padding: 8px 20px;
+    font-size: 0.85rem;
   }
 
   .carousel-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
   }
 
   .carousel-nav-prev {
@@ -246,7 +257,12 @@
 
   .carousel-indicators {
     bottom: 0.5rem;
-    gap: 0.4rem;
+    gap: 0.3rem;
+  }
+
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
   }
 
   .indicator {
