@@ -1,5 +1,7 @@
 import './Activities.css'
 import { siteConfig } from '../config'
+import TourVideos from './TourVideos'
+import TourGallery from './TourGallery'
 
 // Import images
 import whaleWatching from '../assets/hermanus/whale-watching.jpg'
@@ -108,6 +110,9 @@ function Activities({ onNavigate }) {
           <p>Watch a short clip of Hermanus whale-watching (opens on YouTube).</p>
           <a className="video-thumb" href={siteConfig.social.youtube} target="_blank" rel="noreferrer">Watch Whale Watching Videos on YouTube</a>
         </div>
+
+        <TourVideos />
+        <TourGallery />
 
         <div className="cta-section">
           <h3>Ready to explore Hermanus?</h3>
