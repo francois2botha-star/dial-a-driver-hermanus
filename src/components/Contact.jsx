@@ -21,35 +21,21 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    // Prepare email data for Web3Forms
-    const emailData = {
-      access_key: "96e56ef1-d4d8-442f-867f-df90212949d0",
-      subject: `Contact Form Inquiry from ${formData.name}`,
-      from_name: formData.name,
-      email: formData.email,
-      to_email: "francois2botha@gmail.com",
-      message: `
-=== CONTACT FORM INQUIRY ===
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-
-Message:
-${formData.message}
-
----
-Reply directly to this email to contact the customer.
-      `.trim()
-    }
+    // Prepare form data for Web3Forms
+    const formPayload = new FormData()
+    formPayload.append('access_key', '96e56ef1-d4d8-442f-867f-df90212949d0')
+    formPayload.append('name', formData.name)
+    formPayload.append('email', formData.email)
+    formPayload.append('phone', formData.phone)
+    formPayload.append('message', formData.message)
+    formPayload.append('subject', `Contact Form Inquiry from ${formData.name}`)
+    formPayload.append('from_name', 'Dial a Driver Website')
+    formPayload.append('replyto', formData.email)
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(emailData)
+        body: formPayload
       })
 
       const result = await response.json()
@@ -64,6 +50,7 @@ Reply directly to this email to contact the customer.
         })
       } else {
         alert('Failed to send message. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+        console.error('Error:', result)
       }
     } catch (error) {
       alert('Failed to send message. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
