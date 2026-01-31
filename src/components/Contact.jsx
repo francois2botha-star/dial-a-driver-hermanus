@@ -1,6 +1,7 @@
 import './Contact.css'
 import { useState } from 'react'
 import { siteConfig } from '../config'
+import SEO from './SEO'
 
 function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -65,9 +66,14 @@ function Contact() {
   }
 
   return (
-    <section className="contact" id="contact">
-      <div className="contact-container">
-        <h1>Contact Dial a Driver Hermanus</h1>
+    <>
+      <SEO 
+        title="Contact Dial-a-Driver Hermanus | 24/7 Shuttle & Chauffeur Services"
+        description="Get in touch with Dial-a-Driver Hermanus. Call +27 64 799 7924 or send a message. Available 24/7 for airport transfers, shuttles, and chauffeur services."
+      />
+      <section className="contact" id="contact">
+        <div className="contact-container">
+          <h1>Contact Dial a Driver Hermanus</h1>
         <p style={{textAlign: 'center', fontSize: '1.1rem', marginBottom: '2rem', color: '#666'}}>
           Professional chauffeur services available 24/7. Call, email, or use WhatsApp to book your shuttle or arrange airport transfers.
         </p>
@@ -157,7 +163,8 @@ function Contact() {
           </form>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   )
 }
 

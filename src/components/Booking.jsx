@@ -111,9 +111,14 @@ Comments: ${formData.comments}` : ''}`
   }
 
   return (
-    <section className="booking">
-      <div className="booking-intro">
-        <h1>Premium Chauffeur Services Hermanus</h1>
+    <>
+      <SEO 
+        title="Book Shuttle & Chauffeur Services in Hermanus | Dial-a-Driver"
+        description="Reserve professional shuttle service or chauffeur-driven transport in Hermanus. Airport transfers, wine estate tours, and Western Cape transportation. Book online now."
+      />
+      <section className="booking">
+        <div className="booking-intro">
+          <h1>Premium Chauffeur Services Hermanus</h1>
         <h2 className="subtitle">Sophisticated shuttle and chauffeur services, based in Hermanus.</h2>
         
         <p className="description">
@@ -342,7 +347,8 @@ Comments: ${formData.comments}` : ''}`
           </div>
         </div>
       )}
-    </section>
+      </section>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import './Activities.css'
 import { siteConfig } from '../config'
 import TourVideos from './TourVideos'
 import TourGallery from './TourGallery'
+import SEO from './SEO'
 
 // Import images
 import whaleWatching from '../assets/hermanus/whale-watching.jpg'
@@ -81,7 +82,12 @@ function Activities({ onNavigate }) {
   ]
 
   return (
-    <section className="activities">
+    <>
+      <SEO 
+        title="Hermanus Activities & Tours | Whale Watching & Attractions | Dial-a-Driver"
+        description="Discover top activities and tours in Hermanus: whale watching, wine estates, Grotto Beach, shark diving, and more. We provide reliable shuttle services for all your adventures."
+      />
+      <section className="activities">
       <div className="activities-container container">
         <div className="activities-header">
           <h2>Discover Hermanus</h2>
@@ -120,7 +126,8 @@ function Activities({ onNavigate }) {
           <button className="book-btn" onClick={() => onNavigate?.('booking')}>Book a Ride Now</button>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   )
 }
 
