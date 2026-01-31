@@ -36,66 +36,79 @@ function Booking() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Booking submitted:', formData)
     
-    const serviceName = activeTab === 'shuttle' ? 'Shuttle Service' : 'Take Me Home Service'
+    const serviceName = activeTab === 'shuttle' ? 'Shuttle Service' : 'Chauffeur-Driven Service'
     
-    // Compose mailto to open user's email client with booking details
-    const to = 'francois2botha@gmail.com'
-    const subject = encodeURIComponent(`Booking: ${serviceName} - Reply to: ${formData.email}`)
-    
-    let bodyText = `CUSTOMER EMAIL: ${formData.email}\n`
-    bodyText += `CUSTOMER PHONE: ${formData.phone}\n`
-    bodyText += `(Reply to this email will go to: ${formData.email})\n\n`
-    bodyText += `--- BOOKING DETAILS ---\n\n`
-    bodyText += `Service Type: ${serviceName}\n`
-    bodyText += `Name: ${formData.name} ${formData.surname}\n`
-    bodyText += `Email: ${formData.email}\n`
-    bodyText += `Phone: ${formData.phone}\n`
-    bodyText += `Pickup: ${formData.pickupLocation}\n`
-    bodyText += `Dropoff: ${formData.dropoffLocation}\n`
-    bodyText += `Date: ${formData.date}\n`
-    bodyText += `Time: ${formData.time}\n`
-    bodyText += `Passengers: ${formData.passengers}\n`
-    bodyText += `Trip Type: ${formData.tripType}`
-    
-    if (formData.flightNumber) {
-        bodyText += `\nFlight #: ${formData.flightNumber}`
-    }
-    
-    if (activeTab === 'shuttle') {
-        bodyText += `\nPreferred Vehicle: ${formData.vehicleType}`
-    }
-    
-    if (formData.comments) {
-        bodyText += `\n\nComments: ${formData.comments}`
+    // Prepare email data for Web3Forms
+    const emailData = {
+      access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Get free key from https://web3forms.com
+      subject: `New Booking: ${serviceName} from ${formData.name}`,
+      from_name: `${formData.name} ${formData.surname}`,
+      email: formData.email,
+      to_email: "francois2botha@gmail.com",
+      message: `
+=== BOOKING DETAILS ===
+
+Service Type: ${serviceName}
+Customer: ${formData.name} ${formData.surname}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+TRIP INFORMATION:
+Pickup Location: ${formData.pickupLocation}
+Dropoff Location: ${formData.dropoffLocation}
+Date: ${formData.date}
+Time: ${formData.time}
+Passengers: ${formData.passengers}
+Trip Type: ${formData.tripType}
+${formData.flightNumber ? `Flight Number: ${formData.flightNumber}` : ''}
+${activeTab === 'shuttle' ? `Preferred Vehicle: ${formData.vehicleType}` : ''}
+
+${formData.comments ? `Additional Comments:\n${formData.comments}` : ''}
+
+---
+Reply directly to this email to contact the customer.
+      `.trim()
     }
 
-    const body = encodeURIComponent(bodyText)
-    const mailto = `mailto:${to}?subject=${subject}&body=${body}`
-    
-    window.location.href = mailto
-    
-    alert('Your email client will open to send the booking. If it does not, please email francois2botha@gmail.com')
-    
-    setFormData({
-      pickupLocation: '',
-      dropoffLocation: '',
-      date: '',
-      time: '',
-      passengers: '1',
-      name: '',
-      surname: '',
-      phone: '',
-      email: '',
-      flightNumber: '',
-      tripType: 'one-way',
-      comments: '',
-      vehicleType: 'Standard Sedan'
-    })
-    closeModal()
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailData)
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        alert('✓ Booking request sent successfully! We will contact you soon.')
+        setFormData({
+          pickupLocation: '',
+          dropoffLocation: '',
+          date: '',
+          time: '',
+          passengers: '1',
+          name: '',
+          surname: '',
+          phone: '',
+          email: '',
+          flightNumber: '',
+          tripType: 'one-way',
+          comments: '',
+          vehicleType: 'Standard Sedan'
+        })
+        closeModal()
+      } else {
+        alert('Failed to send booking. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+      }
+    } catch (error) {
+      alert('Failed to send booking. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+      console.error('Booking error:', error)
+    }
   }
 
   return (
