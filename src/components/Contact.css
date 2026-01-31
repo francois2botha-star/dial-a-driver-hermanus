@@ -137,6 +137,13 @@
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
 }
 
+.contact-form .submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 @media (max-width: 768px) {
   .contact {
     padding: 40px 16px;

@@ -20,7 +20,15 @@ function Header({ onNavigate, activeSection }) {
           <button aria-label="Contact us" aria-current={activeSection === 'contact' ? 'page' : undefined} className={"nav-btn " + (activeSection === 'contact' ? 'active' : '')} onClick={() => onNavigate('contact')}>Contact</button>
         </nav>
         <div className="contact-info">
-          <a href="tel:+27647997924" className="phone">📞 +27 64 799 7924</a>
+          <a href="tel:+27647997924" className="contact-btn phone">Call Now</a>
+          <a
+            href="https://wa.me/27647997924?text=Hello%20Dial%20a%20Driver%20Hermanus%2C%20I%27d%20like%20to%20book%20a%20ride"
+            className="contact-btn whatsapp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            WhatsApp
+          </a>
         </div>
       </div>
     </header>

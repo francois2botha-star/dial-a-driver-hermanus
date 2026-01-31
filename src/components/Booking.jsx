@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 function Booking() {
   const [activeTab, setActiveTab] = useState(null) // 'shuttle' | 'takemehome' | null for none
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     pickupLocation: '',
     dropoffLocation: '',
@@ -38,6 +39,8 @@ function Booking() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (isSubmitting) return
+    setIsSubmitting(true)
     
     const serviceName = activeTab === 'shuttle' ? 'Shuttle Service' : 'Chauffeur-Driven Service'
     
@@ -102,6 +105,8 @@ Comments: ${formData.comments}` : ''}`
     } catch (error) {
       alert('Failed to send booking. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
       console.error('Booking error:', error)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -186,7 +191,7 @@ Comments: ${formData.comments}` : ''}`
             <button className="close-modal" onClick={closeModal}>&times;</button>
             <h2>Reserve {activeTab === 'shuttle' ? 'Shuttle Service' : 'Chauffeur-Driven Service'}</h2>
             
-            <form className="booking-form-modal" onSubmit={handleSubmit}>
+            <form className="booking-form-modal" onSubmit={handleSubmit} aria-busy={isSubmitting}>
               <div className="form-row">
                 <div className="form-group">
                   <label>Pickup Location</label>
@@ -330,8 +335,8 @@ Comments: ${formData.comments}` : ''}`
                 />
               </div>
 
-              <button type="submit" className="submit-btn">
-                  Confirm {activeTab === 'shuttle' ? 'Shuttle' : 'Chauffeur-Driven'} Reservation
+              <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : `Confirm ${activeTab === 'shuttle' ? 'Shuttle' : 'Chauffeur-Driven'} Reservation`}
               </button>
             </form>
           </div>

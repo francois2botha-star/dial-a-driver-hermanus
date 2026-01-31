@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/generate-sitemap.cjs",
     "preview": "vite preview",
     "generate-report": "node scripts/generate-ga4-report.js",
     "deploy": "npm run build && git add dist -f && git commit -m 'Deploy to GitHub Pages' && git subtree push --prefix dist origin gh-pages"

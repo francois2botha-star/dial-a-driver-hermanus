@@ -16,14 +16,15 @@
 
 .activities-header h2 {
   font-size: 2.4rem;
-  color: var(--text-dark);
+  color: #1a1a2e;
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.2px;
 }
 
 .activities-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: #4a4a4a;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.8;
@@ -85,7 +86,7 @@
 }
 
 .description {
-  color: #666;
+  color: #4a4a4a;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -99,7 +100,7 @@
 }
 
 .highlights li {
-  color: #555;
+  color: #3f3f3f;
   padding: 8px 0;
   border-bottom: 1px solid #eee;
   font-size: 0.95rem;

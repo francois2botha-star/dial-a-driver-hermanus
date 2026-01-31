@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { siteConfig } from '../config'
 
 function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,6 +21,8 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (isSubmitting) return
+    setIsSubmitting(true)
     
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -56,6 +59,8 @@ function Contact() {
     } catch (error) {
       alert('Failed to send message. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
       console.error('Contact form error:', error)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -102,7 +107,7 @@ function Contact() {
             ></iframe>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" onSubmit={handleSubmit} aria-busy={isSubmitting}>
             <div className="form-group">
               <label>Full Name</label>
               <input
@@ -146,7 +151,9 @@ function Contact() {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
           </form>
         </div>
       </div>

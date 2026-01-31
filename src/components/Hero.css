@@ -111,6 +111,17 @@
   transform: translateY(-4px);
 }
 
+.cta-btn.whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+  color: #0b2e13;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+.cta-btn.whatsapp:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.35);
+}
+
 .hero-background {
   position: absolute;
   top: 0;
