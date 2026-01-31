@@ -126,13 +126,13 @@ Comments: ${formData.comments}` : ''}`
         <div className="booking-actions">
           <button className="action-btn shuttle-btn" onClick={() => openModal('shuttle')}>
             <span className="btn-icon">🚐</span>
-            <span className="btn-text">Reserve Shuttle Service</span>
+            <span className="btn-text">Book Shuttle Service</span>
             <span className="btn-sub">Professional chauffeur in our vehicle</span>
           </button>
           
           <button className="action-btn takemehome-btn" onClick={() => openModal('takemehome')}>
             <span className="btn-icon">🚗</span>
-            <span className="btn-text">Chauffeur-Driven Service</span>
+            <span className="btn-text">Book A Driver Only</span>
             <span className="btn-sub">Our chauffeur drives your vehicle</span>
           </button>
         </div>
@@ -247,19 +247,6 @@ Comments: ${formData.comments}` : ''}`
                   </select>
                 </div>
               </div>
-
-              {activeTab === 'shuttle' && (
-                 <div className="form-row">
-                   <div className="form-group full-width">
-                     <label>Vehicle Preference</label>
-                     <select name="vehicleType" value={formData.vehicleType} onChange={handleChange}>
-                       <option>Standard Sedan</option>
-                       <option>Luxury SUV</option>
-                       <option>Minibus (Groups)</option>
-                     </select>
-                   </div>
-                 </div>
-              )}
 
               <div className="form-row">
                 <div className="form-group">
