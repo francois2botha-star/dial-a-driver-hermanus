@@ -96,11 +96,11 @@ Comments: ${formData.comments}` : ''}`
         })
         closeModal()
       } else {
-        alert('Failed to send booking. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+        alert('Failed to send booking. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
         console.error('Error:', result)
       }
     } catch (error) {
-      alert('Failed to send booking. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+      alert('Failed to send booking. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
       console.error('Booking error:', error)
     }
   }

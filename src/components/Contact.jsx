@@ -50,11 +50,11 @@ function Contact() {
           message: ''
         })
       } else {
-        alert('Failed to send message. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+        alert('Failed to send message. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
         console.error('Error:', result)
       }
     } catch (error) {
-      alert('Failed to send message. Please call us at +27 64 799 7924 or email francois2botha@gmail.com')
+      alert('Failed to send message. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
       console.error('Contact form error:', error)
     }
   }

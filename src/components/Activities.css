@@ -1,12 +1,12 @@
 .activities {
-  padding: 100px 20px;
+  padding: 80px 20px;
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .activities-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 48px 20px;
+  padding: 0 20px;
 }
 
 .activities-header {
@@ -31,15 +31,15 @@
 
 .activities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
   margin-bottom: 40px;
 }
 
 .activity-card {
   background: white;
   border-radius: 12px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
   border: 2px solid transparent;
@@ -57,17 +57,6 @@
   display: none;
 }
 
-.activity-card h3 {
-  font-size: 1.4rem;
-  color: #1a1a2e;
-  margin: 15px 0 8px 0;
-  font-weight: 700;
-}
-
-.category {
-  display: inline-block;
-  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-
 .activity-image {
   width: 100%;
   height: 220px;
@@ -75,6 +64,10 @@
   border-radius: 10px;
   margin-bottom: 14px;
 }
+
+.category {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -82,6 +75,13 @@
   font-weight: 600;
   margin-bottom: 15px;
   width: fit-content;
+}
+
+.activity-card h3 {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin: 15px 0 8px 0;
+  font-weight: 700;
 }
 
 .description {
@@ -162,11 +162,23 @@
 
 @media (max-width: 768px) {
   .activities {
-    padding: 60px 20px;
+    padding: 40px 16px;
+  }
+
+  .activities-container {
+    padding: 0 16px;
+  }
+
+  .activities-header {
+    margin-bottom: 32px;
   }
 
   .activities-header h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .activities-header p {
+    font-size: 1rem;
   }
 
   .activities-grid {
@@ -174,11 +186,41 @@
     gap: 20px;
   }
 
+  .activity-card {
+    padding: 16px;
+  }
+
+  .activity-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .activity-image {
+    height: 180px;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .highlights li {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+
   .cta-section {
-    padding: 40px 20px;
+    padding: 32px 20px;
   }
 
   .cta-section h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .book-btn {
+    padding: 12px 32px;
+    font-size: 1rem;
   }
 }
