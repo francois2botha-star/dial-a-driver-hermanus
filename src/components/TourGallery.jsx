@@ -1,7 +1,7 @@
 import './TourGallery.css'
 
 function TourGallery() {
-  const galleryImages = import.meta.glob('../assets/activities gallery/*.{jpg,jpeg,jfif}', { eager: true, import: 'default' })
+  const galleryImages = import.meta.glob('../assets/activities gallery/*.{jpg,jpeg}', { eager: true, import: 'default' })
   
   const images = Object.entries(galleryImages).map(([path, src], index) => ({
     id: index + 1,
