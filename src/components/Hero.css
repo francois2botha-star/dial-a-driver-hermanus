@@ -2,7 +2,7 @@
   position: relative;
   min-height: 100vh;
   height: 100dvh;
-  background-image: linear-gradient(rgba(15, 20, 25, 0.7), rgba(26, 31, 46, 0.7)), url('/src/assets/hero-large.jpg');
+  background-image: linear-gradient(rgba(15, 20, 25, 0.7), rgba(26, 31, 46, 0.7)), url('../assets/hero-large.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
