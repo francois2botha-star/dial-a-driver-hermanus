@@ -95,6 +95,7 @@ function VehiclesGallery() {
                   alt={vehicle.alt}
                   className="gallery-image"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="gallery-overlay">
                   <span className="view-text">View</span>
@@ -112,6 +113,7 @@ function VehiclesGallery() {
                 src={vehicles[selectedImageIndex].image}
                 alt={vehicles[selectedImageIndex].alt}
                 className="lightbox-image"
+                decoding="async"
               />
               
               <button className="lightbox-close" onClick={closeLightbox}>✕</button>

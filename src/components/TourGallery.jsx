@@ -30,6 +30,7 @@ function TourGallery() {
               src={image.src} 
               alt={image.alt} 
               loading="lazy"
+              decoding="async"
               className="gallery-image"
             />
           </div>

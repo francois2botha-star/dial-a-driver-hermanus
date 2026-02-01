@@ -130,6 +130,7 @@ function Carousel() {
                 alt={slide.alt}
                 className="carousel-image"
                 loading={index === currentIndex ? 'eager' : 'lazy'}
+                decoding="async"
               />
               <div className="carousel-overlay"></div>
               <div className="carousel-caption">

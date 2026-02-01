@@ -1,57 +1,58 @@
 .activities {
-  padding: 80px 20px;
+  padding: 56px 16px;
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .activities-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .activities-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 32px;
 }
 
 .activities-header h2 {
-  font-size: 2.4rem;
-  color: #1a1a2e;
-  margin-bottom: 12px;
+  font-size: 1.8rem;
+  color: #0f1419;
+  margin-bottom: 10px;
   font-weight: 800;
-  letter-spacing: 0.2px;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
 }
 
 .activities-header p {
-  font-size: 1.2rem;
-  color: #4a4a4a;
+  font-size: 1rem;
+  color: #666;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .activities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
 .activity-card {
   background: white;
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 14px;
+  padding: 16px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
   display: flex;
   flex-direction: column;
 }
 
-.activity-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-  border-color: #ffc107;
+.activity-card:active {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  border-color: #ff9f40;
 }
 
 .activity-icon {
@@ -60,7 +61,7 @@
 
 .activity-image {
   width: 100%;
-  height: 220px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 14px;
@@ -68,42 +69,43 @@
 
 .category {
   display: inline-block;
-  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  background: linear-gradient(135deg, #ff9f40 0%, #ff7043 100%);
   color: white;
-  padding: 4px 12px;
+  padding: 4px 10px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   width: fit-content;
 }
 
 .activity-card h3 {
-  font-size: 1.4rem;
-  color: #1a1a2e;
-  margin: 15px 0 8px 0;
+  font-size: 1.15rem;
+  color: #0f1419;
+  margin: 12px 0 6px 0;
   font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
 .description {
-  color: #4a4a4a;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
   flex-grow: 1;
 }
 
 .highlights {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 14px 0;
 }
 
 .highlights li {
   color: #3f3f3f;
-  padding: 8px 0;
+  padding: 6px 0;
   border-bottom: 1px solid #eee;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .highlights li:last-child {
@@ -124,100 +126,103 @@
 .video-thumb{display:inline-block;background:#111;color:#fff;padding:18px 24px;border-radius:8px;text-decoration:none}
 
 .cta-section {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
   color: white;
-  padding: 60px 40px;
-  border-radius: 12px;
+  padding: 32px 20px;
+  border-radius: 14px;
   text-align: center;
 }
 
 .cta-section h3 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
 }
 
 .cta-section p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
   opacity: 0.9;
 }
 
 .book-btn {
-  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-  color: #1a1a2e;
-  padding: 15px 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #ff9f40 0%, #ff7043 100%);
+  color: #1a1a1a;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 18px rgba(255, 143, 64, 0.3);
+  min-height: 48px;
 }
 
-.book-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
-}
-
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .activities {
-    padding: 40px 16px;
-  }
-
-  .activities-container {
-    padding: 0 16px;
+    padding: 80px 24px;
   }
 
   .activities-header {
-    margin-bottom: 32px;
+    margin-bottom: 50px;
   }
 
   .activities-header h2 {
-    font-size: 1.75rem;
+    font-size: 2.3rem;
   }
 
   .activities-header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .activities-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
   }
 
   .activity-card {
-    padding: 16px;
+    padding: 20px;
   }
 
-  .activity-card h3 {
-    font-size: 1.2rem;
+  .activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    border-color: #ff9f40;
   }
 
   .activity-image {
-    height: 180px;
+    height: 220px;
+  }
+
+  .activity-card h3 {
+    font-size: 1.3rem;
   }
 
   .description {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .highlights li {
-    font-size: 0.9rem;
-    padding: 6px 0;
+    font-size: 0.95rem;
   }
 
   .cta-section {
-    padding: 32px 20px;
+    padding: 56px 36px;
   }
 
   .cta-section h3 {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 
   .cta-section p {
-    font-size: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .book-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(255, 143, 64, 0.4);
   }
 
   .book-btn {
