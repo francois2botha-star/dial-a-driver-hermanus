@@ -1,7 +1,7 @@
 .company-overview {
   background: linear-gradient(135deg, var(--primary-color) 0%, #16213e 100%);
   color: white;
-  padding: 80px 0;
+  padding: 56px 16px;
   text-align: center;
 }
 
@@ -11,8 +11,8 @@
 }
 
 .overview-icon {
-  font-size: 3.5rem;
-  margin-bottom: 25px;
+  font-size: 2.4rem;
+  margin-bottom: 16px;
   display: inline-block;
   animation: float 3s ease-in-out infinite;
 }
@@ -27,33 +27,34 @@
 }
 
 .company-overview h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
 }
 
 .overview-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 25px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
   opacity: 0.95;
   font-weight: 400;
 }
 
 .overview-question {
-  font-size: 1.15rem;
-  margin-bottom: 50px;
+  font-size: 1rem;
+  margin-bottom: 28px;
   opacity: 0.9;
   font-style: italic;
 }
 
 .overview-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-  padding-top: 40px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -64,121 +65,54 @@
 }
 
 .stat-number {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent-color);
   margin-bottom: 8px;
 }
 
 .stat-label {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .company-overview {
-    padding: 60px 0;
-  }
-
-  .company-overview h2 {
-    font-size: 2rem;
-  }
-
-  .overview-text {
-    font-size: 1rem;
-  }
-
-  .overview-stats {
-    gap: 20px;
-  }
-
-  .stat-number {
-    font-size: 1.8rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .company-overview {
-    padding: 40px 0;
+    padding: 80px 24px;
   }
 
   .overview-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 22px;
   }
 
   .company-overview h2 {
-    font-size: 1.7rem;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
   }
 
   .overview-text {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
   }
 
   .overview-question {
-    font-size: 1rem;
-    margin-bottom: 35px;
+    font-size: 1.1rem;
   }
 
   .overview-stats {
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding-top: 30px;
-    margin-top: 30px;
+    gap: 24px;
+    margin-top: 36px;
+    padding-top: 36px;
   }
 
   .stat-number {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 
   .stat-label {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .company-overview {
-    padding: 30px 0;
-  }
-
-  .overview-icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-
-  .company-overview h2 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-  }
-
-  .overview-text {
     font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-
-  .overview-question {
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-  }
-
-  .overview-stats {
-    gap: 10px;
-    padding-top: 20px;
-    margin-top: 20px;
-  }
-
-  .stat-number {
-    font-size: 1.3rem;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
   }
 }

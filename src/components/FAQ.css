@@ -1,5 +1,5 @@
 .faq-section {
-  padding: 60px 20px;
+  padding: 56px 16px;
   background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
 }
 
@@ -10,26 +10,28 @@
 
 .faq-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 28px;
 }
 
 .faq-header h2 {
-  font-size: 36px;
-  color: #1a1a2e;
-  margin: 0 0 10px;
+  font-size: 1.8rem;
+  color: #0f1419;
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
 }
 
 .faq-header p {
   color: #666;
-  font-size: 16px;
+  font-size: 0.95rem;
   margin: 0;
 }
 
 .faq-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 50px;
+  gap: 10px;
+  margin-bottom: 28px;
 }
 
 .faq-item {
@@ -41,18 +43,18 @@
 }
 
 .faq-item:hover {
-  border-color: #0066cc;
-  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 16px rgba(255, 143, 64, 0.1);
 }
 
 .faq-item.open {
-  border-color: #0066cc;
-  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.15);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 24px rgba(255, 143, 64, 0.15);
 }
 
 .faq-question {
   width: 100%;
-  padding: 20px 25px;
+  padding: 16px 18px;
   background: white;
   border: none;
   cursor: pointer;
@@ -60,9 +62,9 @@
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
-  font-size: 16px;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #1a1a2e;
+  color: #0f1419;
   text-align: left;
 }
 
@@ -71,7 +73,7 @@
 }
 
 .faq-item.open .faq-question {
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
 }
 
@@ -83,9 +85,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
-  margin-left: 20px;
+  margin-left: 12px;
   flex-shrink: 0;
   transition: transform 0.3s ease;
 }
@@ -95,7 +97,7 @@
 }
 
 .faq-answer {
-  padding: 0 25px;
+  padding: 0 18px;
   max-height: 1000px;
   animation: slideDown 0.3s ease;
   overflow: hidden;
@@ -114,9 +116,9 @@
 
 .faq-answer p {
   color: #555;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
-  padding: 20px 0;
+  padding: 16px 0;
   border-top: 1px solid #e8eef5;
 }
 
@@ -124,26 +126,27 @@
 .faq-support {
   background: white;
   border-radius: 16px;
-  padding: 40px 30px;
+  padding: 24px 20px;
   text-align: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .faq-support h3 {
-  font-size: 24px;
-  color: #1a1a2e;
-  margin: 0 0 10px;
+  font-size: 1.4rem;
+  color: #0f1419;
+  margin: 0 0 8px;
+  font-weight: 800;
 }
 
 .faq-support p {
   color: #666;
-  font-size: 16px;
-  margin: 0 0 30px;
+  font-size: 0.95rem;
+  margin: 0 0 18px;
 }
 
 .support-buttons {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -152,9 +155,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 25px;
-  border-radius: 8px;
-  font-size: 15px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -183,47 +186,54 @@
 }
 
 .support-btn.email {
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
 }
 
 .support-btn.email:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 143, 64, 0.3);
 }
 
 .btn-icon {
-  font-size: 18px;
+  font-size: 16px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 900px) {
   .faq-section {
-    padding: 40px 15px;
+    padding: 80px 24px;
+  }
+
+  .faq-header {
+    margin-bottom: 50px;
   }
 
   .faq-header h2 {
-    font-size: 28px;
+    font-size: 2.4rem;
+  }
+
+  .faq-header p {
+    font-size: 1.05rem;
   }
 
   .faq-question {
-    padding: 16px 18px;
-    font-size: 15px;
+    padding: 20px 25px;
+    font-size: 1rem;
   }
 
   .faq-answer {
-    padding: 0 18px;
-  }
-
-  .support-buttons {
-    flex-direction: column;
-  }
-
-  .support-btn {
-    width: 100%;
-    justify-content: center;
+    padding: 0 25px;
   }
 
   .faq-support {
-    padding: 30px 20px;
+    padding: 40px 30px;
+  }
+
+  .faq-support h3 {
+    font-size: 1.6rem;
+  }
+
+  .faq-support p {
+    font-size: 1rem;
   }
 }

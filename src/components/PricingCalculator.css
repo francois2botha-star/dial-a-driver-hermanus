@@ -1,5 +1,5 @@
 .pricing-calculator-section {
-  padding: 60px 20px;
+  padding: 56px 16px;
   background: white;
 }
 
@@ -10,32 +10,34 @@
 
 .calculator-wrapper {
   background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
-  border-radius: 20px;
-  padding: 40px;
+  border-radius: 16px;
+  padding: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .calculator-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .calculator-header h2 {
-  font-size: 32px;
-  color: #1a1a2e;
+  font-size: 1.8rem;
+  color: #0f1419;
   margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
 }
 
 .calculator-header p {
   color: #666;
-  font-size: 16px;
+  font-size: 0.95rem;
   margin: 0;
 }
 
 .calculator-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   align-items: start;
 }
 
@@ -43,7 +45,7 @@
 .calculator-inputs {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .input-group {
@@ -52,17 +54,17 @@
 }
 
 .input-group label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 12px;
+  color: #0f1419;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .input-group .value {
-  background: #0066cc;
+  background: var(--primary-color);
   color: white;
   padding: 4px 12px;
   border-radius: 6px;
@@ -86,7 +88,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
 }
@@ -95,7 +97,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
   border: none;
@@ -128,7 +130,7 @@
 }
 
 .vehicle-radio:hover {
-  border-color: #0066cc;
+  border-color: var(--primary-color);
   background: #f9fbfd;
 }
 
@@ -140,7 +142,7 @@
 }
 
 .vehicle-radio input[type="radio"]:checked {
-  accent-color: #0066cc;
+  accent-color: var(--primary-color);
 }
 
 .radio-content {
@@ -160,8 +162,8 @@
 }
 
 .vehicle-radio.checked {
-  border-color: #0066cc;
-  background: #f0f6ff;
+  border-color: var(--primary-color);
+  background: #fdf3ec;
 }
 
 /* Time Buttons */
@@ -184,15 +186,15 @@
 }
 
 .time-btn:hover {
-  border-color: #0066cc;
-  color: #0066cc;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .time-btn.active {
-  border-color: #0066cc;
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 143, 64, 0.2);
 }
 
 /* Passenger Info */
@@ -219,7 +221,7 @@
 .price-card {
   background: white;
   border-radius: 16px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 350px;
@@ -236,8 +238,8 @@
 }
 
 .price-amount {
-  font-size: 48px;
-  color: #0066cc;
+  font-size: 40px;
+  color: var(--primary-color);
   margin: 0 0 30px;
   font-weight: 800;
 }
@@ -250,8 +252,8 @@
 }
 
 .price-breakdown h3 {
-  font-size: 14px;
-  color: #1a1a2e;
+  font-size: 12px;
+  color: #0f1419;
   margin: 0 0 15px;
   text-transform: uppercase;
 }
@@ -271,7 +273,7 @@
 
 .breakdown-item span:last-child {
   font-weight: 600;
-  color: #1a1a2e;
+  color: #0f1419;
 }
 
 .price-note {
@@ -297,11 +299,11 @@
 .book-now-btn {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -309,38 +311,40 @@
 
 .book-now-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 143, 64, 0.3);
 }
 
-@media (max-width: 900px) {
-  .calculator-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
+@media (min-width: 900px) {
+  .pricing-calculator-section {
+    padding: 80px 24px;
   }
 
-  .price-card {
-    position: static;
-  }
-
-  .time-buttons {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
   .calculator-wrapper {
-    padding: 25px;
+    padding: 40px;
   }
 
   .calculator-header h2 {
-    font-size: 24px;
+    font-size: 2.2rem;
+  }
+
+  .calculator-header p {
+    font-size: 1.05rem;
+  }
+
+  .calculator-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .price-card {
+    position: sticky;
+  }
+
+  .time-buttons {
+    grid-template-columns: 1fr 1fr;
   }
 
   .price-amount {
-    font-size: 36px;
-  }
-
-  .calculator-inputs {
-    gap: 20px;
+    font-size: 48px;
   }
 }

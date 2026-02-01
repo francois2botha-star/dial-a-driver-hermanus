@@ -1,5 +1,5 @@
 .driver-profiles-section {
-  padding: 60px 20px;
+  padding: 56px 16px;
   background: white;
 }
 
@@ -9,45 +9,47 @@
 }
 
 .driver-profiles-section h2 {
-  font-size: 36px;
+  font-size: 1.8rem;
   text-align: center;
-  color: #1a1a2e;
-  margin: 0 0 10px;
+  color: #0f1419;
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
 }
 
 .section-subtitle {
   text-align: center;
   color: #666;
-  font-size: 16px;
-  margin-bottom: 50px;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
 }
 
 .drivers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-bottom: 50px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
 .driver-card {
   background: linear-gradient(135deg, #f9fbfd 0%, #f0f6ff 100%);
   border: 2px solid #e8eef5;
   border-radius: 16px;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .driver-card:hover {
-  transform: translateY(-8px);
-  border-color: #0066cc;
-  box-shadow: 0 12px 30px rgba(0, 102, 204, 0.15);
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 30px rgba(255, 143, 64, 0.15);
 }
 
 .driver-avatar-large {
-  font-size: 64px;
-  margin-bottom: 15px;
+  font-size: 52px;
+  margin-bottom: 12px;
   display: inline-block;
   animation: float 3s ease-in-out infinite;
 }
@@ -62,38 +64,38 @@
 }
 
 .driver-name {
-  font-size: 22px;
-  color: #1a1a2e;
-  margin: 15px 0;
+  font-size: 1.15rem;
+  color: #0f1419;
+  margin: 12px 0;
 }
 
 .driver-rating {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .stars {
-  font-size: 18px;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .rating-number {
-  background: #0066cc;
+  background: var(--primary-color);
   color: white;
   padding: 4px 10px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
 }
 
 .driver-stats {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
-  padding: 15px 0;
+  margin: 16px 0;
+  padding: 12px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
@@ -105,23 +107,23 @@
 }
 
 .stat-number {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
-  color: #0066cc;
+  color: var(--primary-color);
 }
 
 .stat-label {
-  font-size: 11px;
+  font-size: 10px;
   color: #999;
   margin-top: 3px;
   text-transform: uppercase;
 }
 
 .driver-vehicle {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #555;
-  margin: 15px 0;
-  line-height: 1.6;
+  margin: 12px 0;
+  line-height: 1.5;
 }
 
 .specialties {
@@ -129,27 +131,27 @@
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
-  margin: 15px 0;
+  margin: 12px 0;
 }
 
 .specialty-badge {
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 }
 
 .request-driver-btn {
   width: 100%;
-  padding: 14px 20px;
-  margin-top: 15px;
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  padding: 14px 18px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -157,25 +159,26 @@
 
 .request-driver-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 143, 64, 0.3);
 }
 
 .driver-selection-cta {
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   border-radius: 16px;
-  padding: 50px 30px;
+  padding: 28px 20px;
   text-align: center;
   color: white;
 }
 
 .driver-selection-cta h3 {
-  font-size: 28px;
-  margin: 0 0 15px;
+  font-size: 1.4rem;
+  margin: 0 0 12px;
+  font-weight: 800;
 }
 
 .driver-selection-cta p {
-  font-size: 16px;
-  margin: 0 0 25px;
+  font-size: 0.95rem;
+  margin: 0 0 18px;
   opacity: 0.95;
   max-width: 600px;
   margin-left: auto;
@@ -184,11 +187,11 @@
 
 .book-with-driver-btn {
   background: white;
-  color: #0066cc;
+  color: #0f1419;
   border: none;
-  padding: 16px 40px;
+  padding: 14px 28px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -199,24 +202,43 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 900px) {
   .driver-profiles-section {
-    padding: 40px 15px;
+    padding: 80px 24px;
   }
 
   .driver-profiles-section h2 {
-    font-size: 28px;
+    font-size: 2.4rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 50px;
   }
 
   .drivers-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  .driver-card {
+    padding: 30px;
+  }
+
+  .driver-avatar-large {
+    font-size: 64px;
+  }
+
+  .driver-name {
+    font-size: 1.4rem;
   }
 
   .driver-selection-cta {
-    padding: 30px 20px;
+    padding: 50px 30px;
   }
 
   .driver-selection-cta h3 {
-    font-size: 22px;
+    font-size: 1.8rem;
   }
 }
