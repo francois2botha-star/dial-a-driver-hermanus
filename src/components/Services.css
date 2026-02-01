@@ -10,11 +10,11 @@
 }
 
 .services h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   text-align: center;
   margin-bottom: 50px;
-  color: #1a1a2e;
-  font-weight: 700;
+  color: #0f1419;
+  font-weight: 800;
   letter-spacing: -1px;
 }
 
@@ -36,8 +36,8 @@
 
 .service-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-  border-color: #ffc107;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: #ff9f40;
 }
 
 .service-icon {
@@ -49,9 +49,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+  background: linear-gradient(135deg, #ff9f40 0%, #ff7043 100%);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(255, 143, 64, 0.25);
 }
 
 .service-card h3 {

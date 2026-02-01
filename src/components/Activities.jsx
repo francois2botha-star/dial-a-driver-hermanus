@@ -2,7 +2,7 @@ import './Activities.css'
 import { siteConfig } from '../config'
 import TourVideos from './TourVideos'
 import TourGallery from './TourGallery'
-import SEO from './SEO'
+import SEO from './seo/SEO'
 
 // Import images
 import whaleWatching from '../assets/hermanus/whale-watching.jpg'

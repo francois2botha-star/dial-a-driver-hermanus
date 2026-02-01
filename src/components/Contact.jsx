@@ -1,10 +1,13 @@
 import './Contact.css'
 import { useState } from 'react'
 import { siteConfig } from '../config'
-import SEO from './SEO'
+import SEO from './seo/SEO'
+import { validateContactForm } from '../utils/validation'
 
 function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errors, setErrors] = useState({})
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,10 +21,22 @@ function Contact() {
       ...prev,
       [name]: value
     }))
+    // Clear error for this field
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }))
+    }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    // Validate form
+    const formErrors = validateContactForm(formData)
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors)
+      return
+    }
+
     if (isSubmitting) return
     setIsSubmitting(true)
     
@@ -46,20 +61,20 @@ function Contact() {
       const result = await response.json()
 
       if (result.success) {
-        alert('✓ Message sent successfully! We will get back to you soon.')
+        setSubmitStatus('success')
         setFormData({
           name: '',
           email: '',
           phone: '',
           message: ''
         })
+        setErrors({})
+        setTimeout(() => setSubmitStatus(null), 3000)
       } else {
-        alert('Failed to send message. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
-        console.error('Error:', result)
+        setSubmitStatus('error')
       }
     } catch (error) {
-      alert('Failed to send message. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za')
-      console.error('Contact form error:', error)
+      setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
     }
@@ -113,51 +128,73 @@ function Contact() {
             ></iframe>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit} aria-busy={isSubmitting}>
+          <form className="contact-form" onSubmit={handleSubmit} noValidate>
+            {submitStatus === 'success' && (
+              <div className="success-message" role="alert">
+                <span className="success-icon">✓</span>
+                <p>Message sent successfully! We'll get back to you soon.</p>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="error-message" role="alert">
+                <span className="error-icon">✕</span>
+                <p>Failed to send message. Please call us at +27 64 799 7924 or email info@dialadriverhermanus.co.za</p>
+              </div>
+            )}
+
             <div className="form-group">
-              <label>Full Name</label>
+              <label htmlFor="name">Full Name</label>
               <input
+                id="name"
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                required
+                aria-required="true"
               />
+              {errors.name && <span className="form-error">{errors.name}</span>}
             </div>
             <div className="form-group">
-              <label>Email</label>
+              <label htmlFor="email">Email</label>
               <input
+                id="email"
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your email"
-                required
+                aria-required="true"
               />
+              {errors.email && <span className="form-error">{errors.email}</span>}
             </div>
             <div className="form-group">
-              <label>Phone Number</label>
+              <label htmlFor="phone">Phone Number</label>
               <input
+                id="phone"
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Your phone"
+                placeholder="Your phone (optional)"
               />
+              {errors.phone && <span className="form-error">{errors.phone}</span>}
             </div>
             <div className="form-group">
-              <label>Message</label>
+              <label htmlFor="message">Message</label>
               <textarea
+                id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Your message"
+                placeholder="Your message (at least 10 characters)"
                 rows="5"
-                required
+                aria-required="true"
               ></textarea>
+              {errors.message && <span className="form-error">{errors.message}</span>}
             </div>
-            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+            <button type="submit" className="submit-btn" disabled={isSubmitting} aria-busy={isSubmitting}>
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>

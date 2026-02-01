@@ -8,6 +8,9 @@
     "build": "vite build",
     "postbuild": "node scripts/generate-sitemap.cjs",
     "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "generate-report": "node scripts/generate-ga4-report.js",
     "deploy": "npm run build && git add dist -f && git commit -m 'Deploy to GitHub Pages' && git subtree push --prefix dist origin gh-pages"
   },
