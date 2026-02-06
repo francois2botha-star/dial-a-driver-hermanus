@@ -95,6 +95,23 @@ function Activities({ onNavigate }) {
           <p>Explore world-class attractions and experiences. Let {siteConfig.business.name} get you there safely and comfortably.</p>
         </div>
 
+        <div style={{
+          background: 'linear-gradient(135deg, #ffc107 0%, #ff9800 100%)',
+          padding: '20px',
+          borderRadius: '12px',
+          textAlign: 'center',
+          marginBottom: '40px',
+          boxShadow: '0 4px 15px rgba(255, 193, 7, 0.3)',
+          border: '3px solid #ff6f00'
+        }}>
+          <h3 style={{color: '#1a1a2e', margin: '0 0 10px 0', fontSize: '1.5rem'}}>
+            ✨ DEPLOYMENT TEST - FEB 6, 2026 ✨
+          </h3>
+          <p style={{color: '#1a1a2e', margin: '0', fontSize: '1.1rem'}}>
+            If you see this message, the deployment is WORKING! Western Cape destinations should appear above.
+          </p>
+        </div>
+
         <WhaleWatchingVideo />
 
         <div className="activities-grid">
