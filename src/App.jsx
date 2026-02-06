@@ -3,6 +3,7 @@ import { logPageView } from './analytics'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import WesternCapeDestinations from './components/WesternCapeDestinations'
 import Booking from './components/Booking'
 import About from './components/About'
 import Activities from './components/Activities'
@@ -52,10 +53,16 @@ function App() {
         <>
           <Hero onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />
           <Services />
+          <WesternCapeDestinations onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />
           <About />
         </>
       )}
-      {activeSection === 'activities' && <Activities onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />}
+      {activeSection === 'activities' && (
+        <>
+          <WesternCapeDestinations onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />
+          <Activities onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />
+        </>
+      )}
       {activeSection === 'vehicles' && <VehiclesGallery />}
       {activeSection === 'booking' && <Booking onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />}
       {activeSection === 'contact' && <Contact onNavigate={(s) => { setActiveSection(s); window.location.hash = s }} />}
